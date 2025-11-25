@@ -913,10 +913,19 @@ async function comprar() {
   errorPrecio.textContent = "";
   status.textContent = "";
 
+  const precioCorrecto = "0.001";
+
   if (!precioInput.value.trim()) {
-    errorPrecio.textContent = "Debe ingresar el monto";
+    errorPrecio.textContent = "Debe ingresar el monto.";
     return;
   }
+
+
+  if (precioInput.value.trim() !== precioCorrecto) {
+    errorPrecio.textContent = `El monto ingresado no es correcto. Debe ser exactamente ${precioCorrecto} ETH.`;
+    return;
+  }
+
 
   if (!state.signer) {
     status.innerHTML = "Conectá primero MetaMask.";
@@ -956,7 +965,7 @@ async function comprar() {
     }
 
     // Error genérico
-    status.innerHTML = `❌ Ocurrió un error inesperado: ${err.message}`
+    status.innerHTML = `❌ Ocurrió un error inesperado`
   }
 }
 
