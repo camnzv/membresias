@@ -1,0 +1,11 @@
+{
+    "name": "Primer Paso",
+    "description": "Recompensa por realizar la primera compra de una membresía.",
+    "image": "ipfs://bafkreidi4ufsbocfmqgxhmw7s3skjk2qurupwkgc3rrxhu7rkyrh7lmsrm",
+    "attributes": [
+        {
+            "trait_type": "Tipo",
+            "value": "POAP"
+        }
+    ]
+}

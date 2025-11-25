@@ -1,0 +1,15 @@
+{
+    "name": "Membresía Mensual",
+    "description": "Acceso al gimnasio durante 30 días.",
+    "image": "ipfs://bafkreiav6ixdbeocctqijdgfpzzaccbi7kvucovy4w5tlxqaz4okmvlxbi",
+    "attributes": [
+        {
+            "trait_type": "Tipo",
+            "value": "Membresía"
+        },
+        {
+            "trait_type": "Duración",
+            "value": "30 días"
+        }
+    ]
+}
