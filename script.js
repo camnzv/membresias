@@ -913,6 +913,7 @@ async function comprar() {
   errorPrecio.textContent = "";
   status.textContent = "";
 
+
   const precioCorrecto = "0.001";
 
   if (!precioInput.value.trim()) {
@@ -925,7 +926,6 @@ async function comprar() {
     errorPrecio.textContent = `El monto ingresado no es correcto. Debe ser exactamente ${precioCorrecto} ETH.`;
     return;
   }
-
 
   if (!state.signer) {
     status.innerHTML = "Conectá primero MetaMask.";
@@ -947,25 +947,22 @@ async function comprar() {
     const receipt = await tx.wait();
 
     mostrarModal(tx.hash);
-
     lanzarConfetti();
 
   } catch (err) {
-    // Error por fondos insuficientes  
+
     if (err.code === "INSUFFICIENT_FUNDS" ||
       err.message.includes("insufficient funds")) {
       status.innerHTML = `❌ No tenés ETH suficiente para completar la compra. `;
       return;
     }
 
-    // Error por gas insuficiente
     if (err.message.includes("gas * price + value")) {
       status.innerHTML = `❌ No alcanza el saldo para cubrir el gas de la transacción. `;
       return;
     }
 
-    // Error genérico
-    status.innerHTML = `❌ Ocurrió un error inesperado`
+    status.innerHTML = `❌ Ocurrió un error inesperado`;
   }
 }
 
